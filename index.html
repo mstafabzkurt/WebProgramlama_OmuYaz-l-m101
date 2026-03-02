@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMU YAZILIM101</title>
+    <style>
+        body { font-family: Gill Sans; line-height: 1.4; max-width: 1000px; margin: 20px auto; padding: 20px; background-color: bisque;}
+        form {background: rgb(103, 168, 125); padding: 30px; border-radius: 40px; box-shadow: 0 0 10px rgba(139, 13, 13, 0.959);}
+        fieldset { border: 8px solid #ddd; margin-bottom: 20px; padding: 20px; border-radius: 40px; }
+        legend { font-weight: bold; color: rgb(0, 12, 17); padding: 0 10px; }
+        
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;"> OMU YAZILIMA GİRİŞ ETKİNLİĞİ BAŞVURU FORMU</h1>
+    <p style="font-family: verdana; font-size: 140%;">Etkinliğimizde çeşitli alanların temelden ileri düzeye dersleri yapılacaktır.</p>
+       <p style="color:red; font-family:verdana; font-weight: bold; font-size: 1.2em; margin-bottom: 10px;">Katılım kuralları :</p> 
+
+       <pre style="font-family:courier; font-size: 15px; padding: 5px; line-height: 0.8; margin-top: 10; ">
+✔ Mühendislik öğrencisi olmak.<br>
+✔ Bir dizüstü bilgisayara sahip olmak.<br>
+✔ Öğrenmeyi arzu etmek.
+       </pre> 
+       
+
+       <p style="color:rgb(0, 0, 0); font-family: verdana; font-size: 140%" > Lütfen gerekli bilgileri doldurunuz. <mark>(Tamamı zorunlu.)</mark></p>
+
+       <form action="https://webhook.site/92f5b160-4592-4bab-ad05-4df67778b9df" method="POST" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Kişisel Bilgiler</legend>
+        <label for="ad">Adınız:</label><br>
+        <input type="text" required id="ad" name="ad"><br>
+        <label for="soyad">Soyadınız:</label><br>
+        <input type="text" required id="soyad" name="soyad"><br>
+        <label for="no">Öğrenci numaranız:</label><br>
+        <input type="text" required id="no" name="no" pattern="\d{8}""""><br>
+        <label for="eposta">E-postanız:</label><br>
+        <input type="email" required id="eposta" name="eposta"><br>
+        <label for="telno">Telefon numaranız:</label><br>
+        <input type="text" required id="telno" name="telno" placeholder="05xxxxxxxxx" pattern="05[0-9]{9}"><br>
+        <label for="dtrh">Dogum tarihiniz:</label><br>
+        <input type="date" required id="dtrh" name="dtrh"><br>
+        <small>Format gün/ay/yıl şeklinde olmalıdır.</small><br><br>
+        <label for="web">Linkedin profiliniz:</label><br>
+        <input type="url" id="web" name="web"><br><hr><hr>
+
+        </fieldset><br><br>
+        <fieldset>
+            <legend>Tercihleriniz</legend>
+        <label for="ders">Katılmak istediğiniz ders :</label>
+        <select id="ders" name="ders">
+            <optgroup label="DERSLER">
+                <option value="yapayzeka">Yapay Zeka</option>
+                <option value="siber">Siber Güvenlik</option>
+                <option value="web">Web Geliştirme</option>
+                <option value="mobil">Mobil Geliştirme</option>
+                <option value="algo">Algoritmalar</option>
+
+            </optgroup>
+        </select><br><br>
+
+        <label for="tür">Katılmak istediğiniz oturum türü :</label><br>
+        <input type="radio" required id="yy" name="tür" value="Yüzyüze">
+        <label for="yy">Yüz Yüze</label><br>
+        <input type="radio" required id="ue" name="tür" value="Uzaktan">
+        <label for="yy">Uzaktan Eğitim</label><br><br>
+
+        <label for="tekno">İlgilendiğiniz teknolojiler :</label><br>
+        <input type=checkbox id="tekno1" name="tekno1" value="React.js">
+        <label for="tekno1">React.js</label>
+        <input type=checkbox id="tekno2" name="tekno2" value="Python">
+        <label for="tekno2">Python</label>  
+        <input type=checkbox id="tekno3" name="tekno3" value="Flutter">
+        <label for="tekno3">Flutter</label>
+        <input type=checkbox id="tekno4" name="tekno4" value="CyberSecurity">
+        <label for="tekno4">CyberSecurity</label>
+        <input type=checkbox id="tekno5" name="tekno5" value="Go / Node.js">
+        <label for="tekno5">Go / Node.js</label><br><hr><hr>
+        </fieldset><br><br>
+
+        <fieldset> 
+            <legend>Ekler</legend>
+        <textarea id="motivasyon" name="motivasyon" rows="10" cols="70" placeholder="Bu alana katılım motivasyonunuzu yazınız..."></textarea><br><hr><hr>
+
+        <label for="cv">Yüklemek istediğiniz ek dosyaları buradan yükleyebilirsiniz.</label><br><br>
+        <input type="file" id="cv" name="cv" accept=".pdf, .doc, .docx"><br>
+        <small>(Yalnızca .pdf, .doc, .docx kabul edilecektir)</small><br><hr><hr>
+
+        <label for="gano">Not Ortalaması(GANO):</label>
+        <input type="range" required id="gano" name="gano" min="0" max="4" step="0.01" value="2.00" oninput="ganoGosterge.value = this.value">
+        <output id="ganoGosterge">2.00</output><br><hr><hr>
+
+        <label for="gorusme">Ders için uygunluk saati:</label>
+        <input type="time" required id="gorusme" name="gorusme"><br>
+        <small>08.00 ile 17.00 saatleri arasında olmasına özen gösteriniz.</small><br><hr><hr>
+        <label for="kvkkonay">Yukarıdaki bilgilerin tamamının bana ait olduğunu doğruluyorum ve <a href="#">KVKK</a> metnini okuduğumu, onayladığımı kabul ediyorum.</label>
+        <input type="checkbox" required id="kvkkonay" name="kvkkonay"><br><hr><hr>
+
+        
+        </fieldset>
+
+        <button type="submit">Başvuruyu Tamamla</button>
+       </form>
+
+</body>
+</html>
